@@ -35,7 +35,7 @@ class AuthenticationSubscriber implements EventSubscriberInterface
     {
         $token = $event->getAuthenticationToken();
         $user = $token->getUser();
-        if ($user instanceof User) {
+        if (0 && $user instanceof User) {
             $user->setLastLogin(new \DateTime());
 
             if (UserInterface::STATE_NEW === $user->getState()) {
