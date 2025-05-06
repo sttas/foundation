@@ -51,7 +51,7 @@ class SemanticConfigRootUserHandler implements RootUserHandlerInterface
 
     public function isRootUser(UserInterface $user): bool
     {
-        return $this->getUser()->isEqualTo($user);
+        return $user->getId() == 1;
     }
 
     public function getUser(): UserInterface
