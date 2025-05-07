@@ -38,7 +38,7 @@ class AuthenticationSubscriber implements EventSubscriberInterface
         $lastLoginDate = new \DateTime();
         
         if ($user instanceof User && 
-            (UserInterface::STATE_NEW === $user->getState() || $lastLoginDate->getTimestamp() !== $user->getLastLogin()->getTimestamp()) {
+            (UserInterface::STATE_NEW === $user->getState() || $lastLoginDate->getTimestamp() !== $user->getLastLogin()->getTimestamp())) {
             $user->setLastLogin($lastLoginDate);
 
             if (UserInterface::STATE_NEW === $user->getState()) {
